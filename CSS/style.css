@@ -11,9 +11,13 @@ body{
 	background-color:#777;
 	overflow:hidden;
 }
+body h3{
+	color:#FFE;
+	font-weight:normal;
+}
 #spa{
 	position: absolute;
-	top:8px;
+	top:40px;
 	left:8px;
 	bottom:8px;
 	right:8px;
