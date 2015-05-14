@@ -1,0 +1,37 @@
+
+/*
+   style.css
+   SPA-Hostinger
+		   Created by Vladimir Fernandes on 2015-05-14.
+   Copyright 2015 Vladimir Fernandes. All rights reserved.
+*/
+body{
+	width:100%;
+	height:100%;
+	background-color:#777;
+	overflow:hidden;
+}
+body h3{
+	color:#FFE;
+	font-weight:normal;
+}
+#spa{
+	position: absolute;
+	top:40px;
+	left:8px;
+	bottom:8px;
+	right:8px;
+	border-radius:8px 8px 0 ;
+	background-color:#ccc;
+}
+.spa-slider{
+	position: absolute;
+	bottom: 0;
+	right:2px;
+	width: 300px;
+	height: 16px;
+	cursor: pointer;
+	border-radius:8px 0 0 0;
+	background-color: #f00;
+}
+
