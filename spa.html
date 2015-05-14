@@ -82,7 +82,7 @@
 			//
 			initModule = function($container){
 				//render HTML
-				$container.html(configMap.template_thml);
+				$container.html(configMap.template_html);
 				$chatSlider = $container.find('.spa-slider');
 				//intialize slider height and title
 				//bind the user click event to th;e event handler 
@@ -96,18 +96,19 @@
 		//star spa once DOM is ready
 		//
 		jQuery(document).ready(
-			function(){
-				spa.initModule(jQuery('#spa'));
-			});		
+			
+			function(){console.log("here");spa.initModule(jQuery('#spa'));}
+		);		
 		</script>
 		
 
 	</head>
 
 	<body>
-		<div id="spa">	
-			<!--<div class="spa-slider"></div>-->	
+		<!--<div class="spa-slider"></div>-->	
 			<h1>Boston PHP - JQuery Season 5</h1>
+		<div id="spa">	
+		</div>
 			<div id="menu_container">
 				<ul id="menu">
 					
@@ -119,13 +120,11 @@
 			</p>
 
 			<input type="submit" id="order" value="Submit" />
-		</div>
-			
-		<!-- JavaScript Includes -->
+		<!-- JavaScript Includes 
 		<script type="text/javascript"></script>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>-->
 	</body>
 </html>
