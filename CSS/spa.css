@@ -1,0 +1,69 @@
+/*
+ * 
+ */
+/***BEGIN Reset */
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin-bottom:10px;
+}
+ol,ul,dl{
+	list-style-position: inside;
+}
+
+/*** END Reset */
+
+/***BEGIN standard selectors */
+body{
+	font:13px; 'Trebuchet MS', verdana, Helvetica, Arial, sans-serif;
+	color: #444;
+	background-color: #888;
+}
+a{
+	text-decoration:none;
+	}
+a:link, a:visited{
+	color:inherit;
+}
+a:hover{
+	text-decoration: underline;
+}
+strong{
+	font-weight:normal;
+	color:#000;
+}
+
+/***END standard selectors */
+
+/***BEGIN SPA namespace selectors */
+#spa{
+	position: absolute;
+	top:8px;
+	left:8px;
+	bottom:8px;
+	right:8px;
+	border-radius:0px 8px 0 8px;
+	background-color:#fff;
+	min-height:500px;
+	min-width:500px;
+	overflow:hidden;
+}
+
+/***END SPA namespace selectors */
+
+/***BEGIN Utility selectors */
+.spa-x-select{}
+.spa-x-clearfloat{
+	height:0 !important;
+	float:none !important;
+	visibility:hidden !important;
+	clear:both !important;
+}
+
+/***END  Utility selectors */
