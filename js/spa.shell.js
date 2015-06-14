@@ -68,32 +68,46 @@ spa.shell =(function(){
 	//* true -slider animation activated
 	//* false -slider animation not activated
 	toggleChat =function(){
-		var 
-			px_chat_ht = jqueryMap.$chat.height(),
-			is_open = px_chat_ht === configMap.chat_extend_height,	
-			is_closes =  px_chat_ht === configMap.chat_retract_height,
-			is_sliding = !is_open && !is_closed;
-
-			//avoid race condition
-			if(is_sliding){return false;}
-			
-			//Begin extend chat slider
-			if(do_extend){
-				jqueryMap.$chat.animate({height:configMap.chat_extend_height},
-				configMap.chat_retract_time),
-				function(){
-					jqueryMap.$chat.attr(
-						'title',configMap.chat_retracted_title
-					);
-					statteMap.is_chat_retracted = true;
-					if(callback){
-						callback(jqueryMap.$chat);
-					}
-				}
-			};
-			return true;
-			//End retract chat slider
-	}
+        var 
+        	px_chat_ht = jqueryMap.$chat.height(),
+        	is_open = px_chat_ht === configMap.chat_extend_height,	
+        	is_closes =  px_chat_ht === configMap.chat_retract_height,
+        	is_sliding = !is_open && !is_closed;
+        
+        	//avoid race condition
+        if(is_sliding){return false;}
+        
+        //Begin extend chat slider
+        if(do_extend){
+            jqueryMap.$chat.animate(
+                { height:configMap.chat_extend_height},
+                configMap.chat_extend_time,
+                function(){
+            		jqueryMap.$chat.attr(
+            			'title',configMap.chat_extended_title
+            		);
+            		statteMap.is_chat_retracted = true;
+            		if(callback){callback(jqueryMap.$chat);}
+            	}
+            );
+            return true;
+        //End extend chat slider
+        }
+        //Begin retract chat slider
+        jqueryMap.$chat.animate(
+          { height:configMap.chat_retract_height },
+          configMap.chat_retract_time,
+          function(){
+            jqueryMap.$chat.attr(
+                'title', configMap.chat_retracted_title
+            );
+            statteMap.is_chat_retracted = true;
+            if(callback){callback(jqueryMap.$chat);}
+          }
+        );
+        return true;
+       //End retract chat slider
+    };
 	//End DOM method /toggleChat/
 	//--------------END DOM Methods -----------------------------------
 	//--------------Begin Event Handlers ------------------------------
@@ -102,7 +116,7 @@ spa.shell =(function(){
 	onClicChat = function(event){
 		toggleChat(stateMap.is_chat_retracted);
 		return false;
-	}
+	};
 	//Begin Public method /initModule
 	initModule = function($container){
 		// load HTML and map jQuery collections
@@ -119,7 +133,7 @@ spa.shell =(function(){
 		//setTimeout(function(){toggleChat(false);},8000);
 	};
 	//END Public Method /initModile
-	return {initModule:initModule}
+	return {initModule:initModule};
 	
 	//--------------End Public Methods --------------------------------
 }());
