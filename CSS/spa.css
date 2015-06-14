@@ -1,4 +1,6 @@
 /*
+ * Spa.css
+ * Root namespace styles
  * 
  */
 /***BEGIN Reset */
@@ -21,7 +23,7 @@ ol,ul,dl{
 
 /***BEGIN standard selectors */
 body{
-	font:13px; 'Trebuchet MS', verdana, Helvetica, Arial, sans-serif;
+	font:13px 'Trebuchet MS', verdana, Helvetica, Arial, sans-serif;
 	color: #444;
 	background-color: #888;
 }
