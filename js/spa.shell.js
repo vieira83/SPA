@@ -47,7 +47,7 @@ spa.shell =(function(){
 	//--------------Begin Utility Methods --------------------------
 	//--------------End Utility Methods-----------------------------
 	//--------------End DOM Methods---------------------------------
-	//BEGIN D0m method / setJqueryMap/
+	//BEGIN Dom method / setJqueryMap/
 	setJqueryMap = function(){
 		var $container = stateMap.$container;
 		jqueryMap={
