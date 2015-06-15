@@ -17,12 +17,12 @@ spa.shell =(function(){
 	var
 		configMap = {
 			main_html : String()
-			+'<div class =="spa=shell-head">'
-				+'<div class =="spa=shell-head-logo"></div>'
-				+'<div class =="spa=shell-head-acct"></div>'
+			+'<div class ="spa-shell-head">'
+				+'<div class ="spa-shell-head-logo"></div>'
+				+'<div class ="spa-shell-head-acct"></div>'
 				+'<div class ="spa-shell-head-search"></div>'
 			+'</div>'
-			+'<div class ="spa-shell-main"></div>'
+			+'<div class ="spa-shell-main">'
 				+'<div class ="spa-shell-main-nav"></div>'
 				+'<div class ="spa-shell-main-content"></div>'
 			+'</div>'
@@ -65,6 +65,7 @@ spa.shell =(function(){
 	//Settings
 	//*Chat_enxtend_time, chat_retract_time
 	//Returns :boolean
+	//State : sets stateMap.is_chat_retracted
 	//* true -slider animation activated
 	//* false -slider animation not activated
 	toggleChat =function(){
@@ -86,7 +87,7 @@ spa.shell =(function(){
             		jqueryMap.$chat.attr(
             			'title',configMap.chat_extended_title
             		);
-            		statteMap.is_chat_retracted = true;
+            		statteMap.is_chat_retracted = false;
             		if(callback){callback(jqueryMap.$chat);}
             	}
             );
