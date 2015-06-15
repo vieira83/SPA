@@ -29,7 +29,7 @@ spa.shell =(function(){
 			+'<div class ="spa-shell-foot"></div>'
 			+'<div class ="spa-shell-chat"></div>'
 			+'<div class ="spa-shell-modal"></div>',
-			chat_extend_time : 1000,
+			chat_extend_time : 250,
 			chat_retract_time : 300,
 			chat_extend_height : 450,
 			chat_retract_height : 15,
@@ -68,11 +68,11 @@ spa.shell =(function(){
 	//State : sets stateMap.is_chat_retracted
 	//* true -slider animation activated
 	//* false -slider animation not activated
-	toggleChat =function(){
+	toggleChat =function(do_extend, callback){
         var 
         	px_chat_ht = jqueryMap.$chat.height(),
         	is_open = px_chat_ht === configMap.chat_extend_height,	
-        	is_closes =  px_chat_ht === configMap.chat_retract_height,
+        	is_closed =  px_chat_ht === configMap.chat_retract_height,
         	is_sliding = !is_open && !is_closed;
         
         	//avoid race condition
@@ -87,7 +87,7 @@ spa.shell =(function(){
             		jqueryMap.$chat.attr(
             			'title',configMap.chat_extended_title
             		);
-            		statteMap.is_chat_retracted = false;
+            		stateMap.is_chat_retracted = false;
             		if(callback){callback(jqueryMap.$chat);}
             	}
             );
@@ -102,7 +102,7 @@ spa.shell =(function(){
             jqueryMap.$chat.attr(
                 'title', configMap.chat_retracted_title
             );
-            statteMap.is_chat_retracted = true;
+            stateMap.is_chat_retracted = true;
             if(callback){callback(jqueryMap.$chat);}
           }
         );
@@ -114,7 +114,7 @@ spa.shell =(function(){
 	//--------------Begin Event Handlers ------------------------------
 	
 	//--------------END Event Handlers --------------------------------
-	onClicChat = function(event){
+	onClickChat = function(event){
 		toggleChat(stateMap.is_chat_retracted);
 		return false;
 	};
