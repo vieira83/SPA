@@ -53,8 +53,8 @@ spa.shell =(function(){
 	//--------------Begin Utility Methods --------------------------
 	//Returns copy of stored anchor map; minimizes overhead 
     copyAnchorMap = function (){
-        return $.extend(true), {}, stateMap.anchor_map);
-    }
+        return $.extend(true, {}, stateMap.anchor_map);
+    };
 	//--------------End Utility Methods-----------------------------
 	
 	//--------------Begin DOM Methods---------------------------------
@@ -78,21 +78,22 @@ spa.shell =(function(){
 	 //Return true on success, and false on failure.
 	 changeAnchorPart = function  (arg_map) {
 	   var
-	       anchor_map_revises = copyAnchorMap();
-	       bool_return = true;
+	       anchor_map_revise = copyAnchorMap(),
+	       bool_return = true,
 	       key_name, key_name_dep;
+	       
 	       //Begin merge changes into anchor map
 	       KEYVAL:
 	       for(key_name in arg_map){
 	           if(arg_map.hasOwnProperty(key_name)){
 	               //Skip dependent keys during iteration
-	               if (key_name.indexOf('_') ===0){continue KEYVAL;}
+	               if (key_name.indexOf('_') === 0){continue KEYVAL;}
 	               //update independent key value
 	               anchor_map_revise[key_name] = arg_map[key_name];
 	               
     	           // update matching dependent key
     	           key_name_dep = '_' + key_name;
-    	           if ((arg_map[key_name_dep]){
+    	           if (arg_map[key_name_dep]){
     	              anchor_map_revise[key_name_dep] = arg_map[keyname_dep] ;
     	           }
                    else{
@@ -253,17 +254,14 @@ spa.shell =(function(){
 		//configure uriAnchor to useour schema
 		$.uriAnchor.configModule({
 		    schema_map : configMap.anchor_schema_map
-		});
-		
+		});		
 		// Handle URI anchor changee events.
 		// This is done / after/ all dfeature modules are configured
 		// and ininitialized, otherwise they will not be ready to handle
 		// the trigger event , which is used to ensure the anchor
 		// is considered on-load
-		$(window)
-		.bind('hashchange', onHashchange)
-		.trigger('hashchange');
-		
+		$(window).bind('hashchange', onHashchange)
+		.trigger('hashchnage');
 	};
 	//END Public Method /initModile
 	return {initModule:initModule};
