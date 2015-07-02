@@ -12,16 +12,52 @@
   white : true
 */
 
-/* global $, spa */
+/* global $, spa , getComputerStyle*/
 
 spa.chat = (function(){
 //----------------------BEGIN MODULE SCOPE VARIABLES ------------------
 var 
     configMap = {
         main_html:String()
-        +'<div>'
+        +'<div class=spa-chat">'
+            +'<div class=spa-chat-head">'
+                +'<div class=spa-chat-head-toggle">+</div>'
+                +'<div class=spa-chat-head-title">'
+                    +'Chat'
+                +'</div>'
+            +'</div>'
+            +'<div class=spa-chat-closer">x</div>'
+            +'<div class=spa-chat-sizer">'
+                +'<div class=spa-chat-msgs"></div>'
+                +'<div class=spa-chat-box">'
+                    +'<input type="text"/>'
+                    +'<div>send</div>'
+                +'</div>'
+            +'</div>'    
         +'</div>',
-        settable_map:{}
+        settable_map:{
+            slider_open_time :true,
+            slider_close_time :true,
+            slider_opened_em :true,
+            slider_closed_em :true,
+            slider_opened_title :true,
+            slider_closed_title :true,
+            
+            chat_model:true,
+            people_model:true,
+            set_chat_anchor:true
+            
+        },
+        slider_open_time :250,
+        slider_close_time :250,
+        slider_opened_em :16,
+        slider_closed_em :2,
+        slider_opened_title :'click to close',
+        slider_closed_title :'click to open',
+        
+        chat_model:null,
+        people_model:null,
+        set_chat_anchor:null
     },   
     stateMap = {
             $container : null
