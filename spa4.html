@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+    spa.html
+    spa browser document
+-->
+<html>
+    <head>
+        <!-- ie9+ rendering support for latest standards -->
+        <meta http-equiv="Content-Type" content="text/html" charset="ISO-8859-1" />
+        <meta  http-equiv="X-UA-Compatible" content="IE-edge"/>
+        <title>Spa Chapter 4</title>
+        
+        <!-- Google web fonts -->
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel='stylesheet' />
+
+        <!--  CSS files -->
+        <link href="CSS/spa.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/spa.chat.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/spa.shell.css" rel="stylesheet"type="text/css" />
+        
+        <!--  JAVASCRIPTS files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/urianchor/jquery.uriAnchor.js"></script>
+        
+        <script src="js/spa.js"></script>
+        <script src="js/spa.util.js"></script>
+        <script src="js/spa.model.js"></script>
+        <script src="js/spa.shell.js"></script>
+        <script src="js/spa.chat.js"></script>
+        <script type="text/javascript">
+                jQuery(function() {spa.initModule(jQuery('#spa'));});       
+        </script>
+    </head>
+
+    <body>  
+        <h3>Boston PHP - JQuery Season 5</h3>
+        <div id="spa">  
+        </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+        <script src="https://ajax.googleapis.com/libs/backbone.js/1.0.0/backbone-min.js"></script> -->
+    </body>
+</html>

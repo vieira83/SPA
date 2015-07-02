@@ -239,6 +239,8 @@ spa.shell =(function(){
 	//Begin Public method /initModule
 	initModule = function($container){
 		// load HTML and map jQuery collections
+		spa.chat.configModule({});
+		spa.chat.initModule(jqueryMap.$chat);
 		stateMap.$container = $container;
 		$container.html(configMap.main_html);
 		setJqueryMap();
